@@ -1,0 +1,53 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+button:hover,
+button:focus {
+    color: white;
+    border: 4px solid cornflowerblue;
+    background-color: royalblue;
+    transition: all 275ms ease-in-out;
+}
+
+button:focus {
+    &:hover {
+        border-color: cornflowerblue;
+        transition: all 275ms ease-in-out;
+    }
+}
+
+button:hover {
+    color: white;
+    border-color: royalblue;
+    background-color: royalblue;
+    transition: all 275ms ease-in-out;
+}
+
+/* Default button styles */
+.button--wIcon {
+    border: 4px solid transparent;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 0.7rem;
+    display: flex;
+    font-size: 1.125rem;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    margin: 0 1rem 1rem 0;
+    padding: 0 1.5rem 0 1rem;
+    position: relative;
+
+    svg {
+        margin-right: 0.5rem;
+    }
+}
+
+#iconBtnLight {}
+
+#iconBtnDark {}
+
+#iconBtnSystem {}
