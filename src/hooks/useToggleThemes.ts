@@ -1,20 +1,20 @@
-import { themeSwitchEventBus } from "../../../events/ThemeSwtchEvent";
-import useHandleThemes from "../../../hooks/useHandleThemes.ts";
-import useHTMLClassNames from "../../../hooks/useHTMLClassNames.ts";
+import { themeSwitchEventBus } from "../events/ThemeSwtchEvent";
+import useHandleThemes from "../hooks/useHandleThemes.ts";
+import useHTMLClassNames from "../hooks/useHTMLClassNames.ts";
 
 /**
- * Properties and methods for switching themes
+ * Properties and methods for switching themes.
  * @hook useToggleThemes
+ * @returns {object} - The functions to toggle themes.
  */
 function useToggleThemes() {
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const themeSwitch = themeSwitchEventBus;
 
-  // Handle themes
   const { handleLightTheme, handleDarkTheme } = useHandleThemes();
   const { toggleLightClasses, toggleDarkClasses } = useHTMLClassNames();
 
-  // Publish events to switch themes
+  // Publish events to switch themes.  We can listen for these events from components.
   const switchLightTheme = () =>
     themeSwitch.publish("SWITCH_LIGHT_THEME", "light");
   const switchDarkTheme = () =>
@@ -23,7 +23,8 @@ function useToggleThemes() {
     themeSwitch.publish("SWITCH_SYSTEM_THEME", "system");
 
   /**
-   * Toggle light theme
+   * Toggle light theme.
+   * @function toggleLightTheme
    */
   function toggleLightTheme(): void {
     toggleLightClasses();
@@ -33,6 +34,7 @@ function useToggleThemes() {
 
   /**
    * Toggle dark theme
+   * @function toggleDarkTheme
    */
   function toggleDarkTheme(): void {
     toggleDarkClasses();
@@ -42,6 +44,7 @@ function useToggleThemes() {
 
   /**
    * Toggle system theme
+   * @function toggleSystemTheme
    */
   function toggleSystemTheme(): void {
     if (prefersDark) {

@@ -3,11 +3,6 @@ import ThemeIcon from "../ThemeIcon";
 import useIconButton from "./hooks/useIconButton.tsx";
 import React, { forwardRef } from "react";
 
-/**
- * IconButton component
- * @param props
- * @constructor
- */
 const IconButton = forwardRef(function IconButton(
   props: IconButtonProps,
   ref: React.Ref<HTMLButtonElement>,

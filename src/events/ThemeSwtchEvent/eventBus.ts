@@ -14,6 +14,7 @@ class ThemeSwitchEventBus {
 
   /**
    * Initialize the event bus
+   * @function init
    */
   init() {
     this.subscribe("SWITCH_LIGHT_THEME", (theme) => {
@@ -34,6 +35,7 @@ class ThemeSwitchEventBus {
 
   /**
    * Check if an Event is a CustomEvent
+   * @function isCustomEvent
    * @param event
    */
   isCustomEvent(event: Event): event is CustomEvent {
@@ -42,6 +44,7 @@ class ThemeSwitchEventBus {
 
   /**
    * Publish an event with a payload
+   * @function publish
    * @param eventName
    * @param payload
    */
@@ -57,6 +60,7 @@ class ThemeSwitchEventBus {
 
   /**
    * Publish an event with no payload
+   * @function publishNoPayload
    * @param eventName
    */
   publishNoPayload<T extends ThemeSwitchEventsNoPayload>(eventName: T): void {
@@ -66,6 +70,7 @@ class ThemeSwitchEventBus {
 
   /**
    * Subscribe to an event
+   * @function subscribe
    * @param eventName
    * @param callback
    */
@@ -89,6 +94,7 @@ class ThemeSwitchEventBus {
 
   /**
    * Subscribe to an event with no payload
+   * @function subscribeNoPayload
    * @param eventName
    * @param callback
    */

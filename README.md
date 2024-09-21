@@ -2,7 +2,9 @@
 
 ## Description
 
-Leisure app demonstrating toggling between "light", "dark", and "system" modes.
+Leisure app demonstrating switching between "light", "dark", and "system" modes.
+
+Also contains a button toggling between "light" and "dark" modes.
 
 ```js
 // System denotes user's darkmode preference

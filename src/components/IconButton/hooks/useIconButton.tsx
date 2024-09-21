@@ -1,4 +1,4 @@
-import type { IconButtonProps } from "../../../types.ts";
+import type { IconButtonProps } from "../_types";
 import React, { useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 
@@ -7,20 +7,28 @@ import classNames from "classnames";
  * @hook useIconButton
  * @param props
  */
-function useIconButton({ ...props }: IconButtonProps) {
+export default function useIconButton({ ...props }: IconButtonProps) {
   const [btnElement, setBtnElement] = useState<HTMLButtonElement | null>(null);
 
+  // The default classes for the button.
+  const defaultClasses = classNames("button--wIcon", props.classes);
+
+  // Get the button element by id.
   const getBtnElement = useCallback((id: string) => {
     return document.getElementById(id) as HTMLButtonElement;
   }, []);
 
-  const defaultClasses = classNames("button--wIcon", props.classes);
-
+  // On mount, set the button element.
   useEffect(() => {
-    const button = getBtnElement(props.id);
+    const button = getBtnElement(props.id!);
     setBtnElement(button);
   }, [getBtnElement, props.id, setBtnElement]);
 
+  /**
+   * Handle the button click event.
+   * @function handleClick
+   * @param e
+   */
   function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
     btnElement && btnElement.focus();
@@ -35,5 +43,3 @@ function useIconButton({ ...props }: IconButtonProps) {
     setBtnElement,
   };
 }
-
-export default useIconButton;

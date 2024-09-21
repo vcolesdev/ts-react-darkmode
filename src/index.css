@@ -4,10 +4,56 @@
     padding: 2rem;
 }
 
+.dark,
+.light {
+  transition: all 175ms ease-in-out;
+}
+
+.dark {
+    background-color: #222;
+    color: #fefefe;
+}
+
+.light {
+    background-color: #fefefe;
+    color: #222;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.64;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+/* Buttons */
+
 button:hover,
 button:focus {
     color: white;
-    border: 4px solid cornflowerblue;
+    border: 2px solid cornflowerblue;
     background-color: royalblue;
     transition: all 275ms ease-in-out;
 }
@@ -28,17 +74,19 @@ button:hover {
 
 /* Default button styles */
 .button--wIcon {
-    border: 4px solid transparent;
+    border: 2px solid transparent;
     cursor: pointer;
     align-items: center;
-    border-radius: 0.7rem;
+    border-radius: 0.5rem;
     display: flex;
-    font-size: 1.125rem;
-    height: 48px;
+    font-size: 15px;
+    font-weight: 500;
+    height: 40px;
     justify-content: center;
+    letter-spacing: 0.03rem;
     line-height: 1;
     margin: 0 1rem 1rem 0;
-    padding: 0 1.5rem 0 1rem;
+    padding: 0 .75rem 0;
     position: relative;
 
     svg {
